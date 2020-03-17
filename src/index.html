@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Losowanie liczby</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+  </head>
+  <body>
+    <p id="account"></p>
+    <h1 id="nagłówek">Gra pozwalająca na wygraną poprzez losowanie</h1>
+      <div class="content">
+      <div class = "block">
+      <label for = "newGame" class="col-lg-2 control-label">Nowa Gra, podaj liczbę graczy dla nowej gry oraz stawkę:</label>
+      <p></p>
+      <label for="newGame"> Ilość graczy &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </label>
+      <label for="stawka"> &nbsp &nbsp &nbsp &nbsp &nbsp Stawka</label>
+      <p></p>
+      <input id = "newGame" type="number">
+      <input id = "stawka" type="number" min = "1" max = "30">
+      <p></p>
+      <button id = "newGameButton">Nowa gra</button>
+    </div>
+      <div class = "block">
+      <label for = "joinGame" class="col-lg-2 control-label">Dołącz do gry, podaj numer gry:</label>
+      <p> </p>
+      <label for="joinGame">Numer gry</label>
+      <p></p>
+      <input id = "joinGame" type="text">
+      <p></p>
+      <button id = "joinGameButton">Dołącz do gry</button>
+  </div>
+  </div>
+ 
+  <div class="content2">
+      <ul id="gamesList" class="list-unstyled">
+        <h3>Aktywne gry</h3>
+        <div class="gamesTemplate" class="checkbox" style="display: none">
+          <p class = "listContent"></p>
+        </div>
+      </ul>
+      <ul id="completedGames" class="list-unstyled">
+        <h3>Zakończone gry</h3>
+      </ul>
+    </div>
+     
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

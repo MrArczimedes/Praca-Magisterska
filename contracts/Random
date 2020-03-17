@@ -1,0 +1,32 @@
+pragma solidity ^0.5.0;
+
+contract Random {
+    uint public number;
+    uint public request;
+    uint public finalNumber;
+    uint8 public confirm = 0;
+    address player = msg.sender;
+
+    constructor(
+        player,
+        request,
+        finalNumber
+    )
+
+    function requestNum (uint _request) public {
+        //UZALEZNIC WYNIK  OD ADRESU
+        request = _request;
+        confirm = 1;
+    }
+    function roll () public  {
+        require (confirm >= 1, "Confirm your request");
+        bytes32 blockHash = blockhash(block.number-1);
+        uint blockUnhashed = uint(blockHash);
+        finalNumber = blockUnhashed%request + 1;
+        confirm = 0;
+    }
+    function getroll () public view returns (uint) {
+   return (finalNumber);
+ }
+
+}
